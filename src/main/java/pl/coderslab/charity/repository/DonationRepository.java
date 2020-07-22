@@ -11,4 +11,8 @@ import java.util.List;
 public interface DonationRepository extends JpaRepository<Donation, Long> {
     @Query(value = "SELECT SUM(quantity) FROM donation", nativeQuery = true)
     Integer sumAllQuantity();
+
+    @Query(value = "SELECT COUNT(id) FROM donation", nativeQuery = true)
+    Integer amountOfDonation();
+
 }
