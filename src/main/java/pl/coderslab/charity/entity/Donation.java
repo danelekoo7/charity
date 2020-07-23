@@ -1,7 +1,9 @@
 package pl.coderslab.charity.entity;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -9,8 +11,8 @@ import java.time.LocalTime;
 import java.util.Set;
 
 @Entity
-@Getter
-@Setter
+@Data
+@ToString
 public class Donation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
