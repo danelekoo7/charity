@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.entity.Donation;
 import pl.coderslab.charity.repository.CategoryRepository;
+import pl.coderslab.charity.repository.DonationRepository;
 import pl.coderslab.charity.repository.InstitutionRepository;
 
 @Controller
@@ -16,10 +17,12 @@ public class DonationController {
 
     private final CategoryRepository categoryRepository;
     private final InstitutionRepository institutionRepository;
+    private final DonationRepository donationRepository;
 
-    public DonationController(CategoryRepository categoryRepository, InstitutionRepository institutionRepository) {
+    public DonationController(CategoryRepository categoryRepository, InstitutionRepository institutionRepository, DonationRepository donationRepository) {
         this.categoryRepository = categoryRepository;
         this.institutionRepository = institutionRepository;
+        this.donationRepository = donationRepository;
     }
 
 
@@ -35,6 +38,8 @@ public class DonationController {
     @PostMapping
     public String saveDonation(@ModelAttribute Donation donation){
         System.out.println(donation);
+        donationRepository.save(donation);
+
         return "form";
     }
 }
