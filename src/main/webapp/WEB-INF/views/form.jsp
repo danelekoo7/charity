@@ -157,17 +157,17 @@
                         <div class="form-section--column">
                             <h4>Termin odbioru</h4>
                             <div class="form-group form-group--inline">
-                                <label> Data <form:input path="pickUpDate" type="date" name="data"/> </label>
+                                <label> Data <form:input id="formPickUpDate" path="pickUpDate" type="date" name="data"/> </label>
                             </div>
 
                             <div class="form-group form-group--inline">
-                                <label> Godzina <form:input path="pickUpTime" type="time" name="time"/> </label>
+                                <label> Godzina <form:input id="formPickUpTime" path="pickUpTime" type="time" name="time"/> </label>
                             </div>
 
                             <div class="form-group form-group--inline">
                                 <label>
                                     Uwagi dla kuriera
-                                    <form:textarea path="pickUpComment" name="more_info" rows="5"></form:textarea>
+                                    <form:textarea id="formPickUpComment" path="pickUpComment" name="more_info" rows="5"></form:textarea>
                                 </label>
                             </div>
                         </div>
@@ -215,9 +215,9 @@
                             <div class="form-section--column">
                                 <h4>Termin odbioru:</h4>
                                 <ul>
-                                    <li>13/12/2018</li>
-                                    <li>15:40</li>
-                                    <li>Brak uwag</li>
+                                    <li><span id="summaryPickUpDate"></span></li>
+                                    <li><span id="summaryPickUpTime"></span></li>
+                                    <li><span id="summaryPickUpComment"></span></li>
                                 </ul>
                             </div>
                         </div>
