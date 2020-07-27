@@ -164,9 +164,20 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
       // TODO: get data from inputs and show them in summary
+      $('#formStreet').change(function(){
+        $('#summaryStreet').text($(this).val());
+      });
+
     }
 
   }
+
+
+
+
+
+
+
   const form = document.querySelector(".form--steps");
   if (form !== null) {
     new FormSteps(form);

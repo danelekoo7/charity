@@ -72,7 +72,7 @@
                     <c:forEach items="${categories}" var="category">
                         <div class="form-group form-group--checkbox">
                             <label>
-                               <input type="checkbox" name="categories" value="${category.id}"/>
+                                <input type="checkbox" name="categories" value="${category.id}"/>
                                 <span class="checkbox"></span>
                                 <span class="description"><c:out value="${category.name}"/></span>
                             </label>
@@ -134,22 +134,22 @@
                         <div class="form-section--column">
                             <h4>Adres odbioru</h4>
                             <div class="form-group form-group--inline">
-                                <label> Ulica <form:input path="street" type="text" name="address"/> </label>
+                                <label> Ulica <form:input id="formStreet" path="street" type="text" name="address"/> </label>
                             </div>
 
                             <div class="form-group form-group--inline">
-                                <label> Miasto <form:input path="city" type="text" name="city"/> </label>
+                                <label> Miasto <form:input id="formCity" path="city" type="text" name="city"/> </label>
                             </div>
 
                             <div class="form-group form-group--inline">
                                 <label>
-                                    Kod pocztowy <form:input path="zipCode" type="text" name="postcode"/>
+                                    Kod pocztowy <form:input id="formZipCode" path="zipCode" type="text" name="postcode"/>
                                 </label>
                             </div>
 
                             <div class="form-group form-group--inline">
                                 <label>
-                                    Numer telefonu <form:input path="phone" type="phone" name="phone"/>
+                                    Numer telefonu <form:input id="formPhone" path="phone" type="phone" name="phone"/>
                                 </label>
                             </div>
                         </div>
@@ -188,8 +188,7 @@
                             <ul>
                                 <li>
                                     <span class="icon icon-bag"></span>
-                                    <span class="summary--text"
-                                    >4 worki ubrań w dobrym stanie dla dzieci</span
+                                    <span class="summary--text">4 worki ubrań w dobrym stanie dla dzieci</span
                                     >
                                 </li>
 
@@ -206,10 +205,10 @@
                             <div class="form-section--column">
                                 <h4>Adres odbioru:</h4>
                                 <ul>
-                                    <li>Prosta 51</li>
-                                    <li>Warszawa</li>
-                                    <li>99-098</li>
-                                    <li>123 456 789</li>
+                                    <li><span id="summaryStreet"></span></li>
+                                    <li><span id="summaryCity"></span></li>
+                                    <li><span id="summaryZipCode"></span></li>
+                                    <li><span id="summaryPhone"></span></li>
                                 </ul>
                             </div>
 
