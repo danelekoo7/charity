@@ -71,8 +71,8 @@
                     <h3>Zaznacz co chcesz oddać:</h3>
                     <c:forEach items="${categories}" var="category">
                         <div class="form-group form-group--checkbox">
-                            <label>
-                                <input type="checkbox" name="categories" value="${category.id}"/>
+                            <label >
+                                <input class="categoriesClass" data-name="${category.name}" type="checkbox" name="categories" value="${category.id}"/>
                                 <span class="checkbox"></span>
                                 <span class="description"><c:out value="${category.name}"/></span>
                             </label>
@@ -90,7 +90,7 @@
                     <div class="form-group form-group--inline">
                         <label>
                             Liczba 60l worków:
-                            <form:input path="quantity" type="number" name="bags" step="1" min="1"/>
+                            <form:input path="quantity" id="quantity" type="number" name="bags" step="1" min="1"/>
                         </label>
                     </div>
 
@@ -108,7 +108,7 @@
                     <c:forEach items="${institutions}" var="institution">
                         <div class="form-group form-group--checkbox">
                             <label>
-                                <form:radiobutton path="institution" name="organization" value="${institution.id}"/>
+                                <form:radiobutton data-name="${institution.name}" id="formInstitution" path="institution" name="organization" value="${institution.id}"/>
                                 <span class="checkbox radio"></span>
                                 <span class="description">
                                 <div class="title"><c:out value="${institution.name}"/></div>
@@ -188,14 +188,14 @@
                             <ul>
                                 <li>
                                     <span class="icon icon-bag"></span>
-                                    <span class="summary--text">4 worki ubrań w dobrym stanie dla dzieci</span
+                                    <span class="summary--text" id="summaryQuantityAndCategory"></span
                                     >
                                 </li>
 
                                 <li>
                                     <span class="icon icon-hand"></span>
-                                    <span class="summary--text"
-                                    >Dla fundacji "Mam marzenie" w Warszawie</span
+                                    <span class="summary--text" id="summaryInstitution"
+                                    ></span
                                     >
                                 </li>
                             </ul>

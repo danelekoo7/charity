@@ -164,7 +164,6 @@ document.addEventListener("DOMContentLoaded", function () {
             this.$stepInstructions[0].parentElement.parentElement.hidden = this.currentStep >= 5;
             this.$step.parentElement.hidden = this.currentStep >= 5;
 
-            // TODO: get data from inputs and show them in summary
             $('#formStreet').change(function () {
                 $('#summaryStreet').text($(this).val());
             });
@@ -187,6 +186,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 $('#summaryPickUpComment').text($(this).val());
             });
 
+            var categories = $('.categoriesClass:checked')
+            var summaryBagsAndCategoryMessage = "";
+            summaryBagsAndCategoryMessage = "ilość worków: " + $('#quantity').val() + "<br>przekazane rzeczy to: ";
+            categories.each(function (index, element) {
+                summaryBagsAndCategoryMessage += " - " + $(element).data("name")
+            })
+
+            $('#summaryQuantityAndCategory').html(summaryBagsAndCategoryMessage)
+
+            var institutions = $('#formInstitution:checked')
+            $('#summaryInstitution').text(institutions.data("name"))
         }
 
     }
