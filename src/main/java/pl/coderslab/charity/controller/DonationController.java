@@ -40,6 +40,6 @@ public class DonationController {
         System.out.println(donation);
         donationRepository.save(donation);
 
-        return "form";
+        return "form-confirmation";
     }
 }
