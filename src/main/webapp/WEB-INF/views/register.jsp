@@ -3,6 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -17,22 +19,31 @@
 
     <section class="login-page">
         <h2>Załóż konto</h2>
-        <form>
+        <form:form action="/registration" method="post" modelAttribute="user">
             <div class="form-group">
-                <input type="email" name="email" placeholder="Email" />
+                <form:input type="text" path="name" name="name" placeholder="Imię" />
             </div>
             <div class="form-group">
-                <input type="password" name="password" placeholder="Hasło" />
+                <form:input type="email" path="surname" name="surname" placeholder="Nazwisko" />
             </div>
             <div class="form-group">
-                <input type="password" name="password2" placeholder="Powtórz hasło" />
+                <form:input type="email" path="email" name="email" placeholder="Email" />
+            </div>
+            <div class="form-group">
+                <form:input type="email" path="username" name="username" placeholder="nazwa użytkownika" />
+            </div>
+            <div class="form-group">
+                <form:input type="password" path="password" name="password" placeholder="Hasło" />
+            </div>
+            <div class="form-group">
+                <form:input type="password" path="password2" name="password2" placeholder="Powtórz hasło" />
             </div>
 
             <div class="form-group form-group--buttons">
                 <a href="login.html" class="btn btn--without-border">Zaloguj się</a>
                 <button class="btn" type="submit">Załóż konto</button>
             </div>
-        </form>
+        </form:form>
     </section>
 
 
