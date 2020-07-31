@@ -24,13 +24,13 @@
                 <form:input type="text" path="name" name="name" placeholder="Imię" />
             </div>
             <div class="form-group">
-                <form:input type="email" path="surname" name="surname" placeholder="Nazwisko" />
+                <form:input type="text" path="surname" name="surname" placeholder="Nazwisko" />
             </div>
             <div class="form-group">
                 <form:input type="email" path="email" name="email" placeholder="Email" />
             </div>
             <div class="form-group">
-                <form:input type="email" path="username" name="username" placeholder="nazwa użytkownika" />
+                <form:input type="text" path="username" name="username" placeholder="nazwa użytkownika" />
             </div>
             <div class="form-group">
                 <form:input type="password" path="password" name="password" placeholder="Hasło" />
@@ -41,6 +41,7 @@
 
             <div class="form-group form-group--buttons">
                 <a href="login.html" class="btn btn--without-border">Zaloguj się</a>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <button class="btn" type="submit">Załóż konto</button>
             </div>
         </form:form>

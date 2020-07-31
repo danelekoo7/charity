@@ -13,7 +13,6 @@ import java.util.Set;
 
 @Entity
 @Data
-@ToString
 public class Donation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
