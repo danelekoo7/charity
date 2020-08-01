@@ -33,10 +33,6 @@
                 <form:errors path="email"/>
             </div>
             <div class="form-group">
-                <form:input type="text" path="username" name="username" placeholder="nazwa użytkownika" />
-                <form:errors path="username"/>
-            </div>
-            <div class="form-group">
                 <form:input type="password" path="password" name="password" placeholder="Hasło" />
                 <form:errors path="password"/>
             </div>

@@ -17,9 +17,9 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
-    @Column(nullable = false, unique = true)
-    private String username;
+//    @NotBlank
+//    @Column(nullable = false, unique = true)
+//    private String username;
 
     private String name;
     private String surname;
@@ -32,6 +32,7 @@ public class User {
 
     @NotBlank
     @Email
+    @Column(nullable = false, unique = true)
     private String email;
 
 

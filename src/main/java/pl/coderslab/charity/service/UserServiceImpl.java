@@ -25,8 +25,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findByUserName(String username) {
-        return userRepository.findByUsername(username);
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(User user) {
-        User byUsername = userRepository.findByUsername(user.getUsername());
+        User byUsername = userRepository.findByEmail(user.getEmail());
         if (byUsername != null) {
             userRepository.deleteById(byUsername.getId());
         }

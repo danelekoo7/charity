@@ -32,7 +32,7 @@ public class RegisterController {
 
     @PostMapping
     public String createNewUser(@Valid User user, BindingResult result) {
-        User userExists = userService.findByUserName(user.getUsername());
+        User userExists = userService.findByEmail(user.getEmail());
         if (userExists != null) {
             result
                     .rejectValue("username", "error.user.exists");
