@@ -22,21 +22,27 @@
         <form:form action="/registration" method="post" modelAttribute="user">
             <div class="form-group">
                 <form:input type="text" path="name" name="name" placeholder="Imię" />
+                <form:errors path="name"/>
             </div>
             <div class="form-group">
                 <form:input type="text" path="surname" name="surname" placeholder="Nazwisko" />
+                <form:errors path="surname"/>
             </div>
             <div class="form-group">
                 <form:input type="email" path="email" name="email" placeholder="Email" />
+                <form:errors path="email"/>
             </div>
             <div class="form-group">
                 <form:input type="text" path="username" name="username" placeholder="nazwa użytkownika" />
+                <form:errors path="username"/>
             </div>
             <div class="form-group">
                 <form:input type="password" path="password" name="password" placeholder="Hasło" />
+                <form:errors path="password"/>
             </div>
             <div class="form-group">
                 <form:input type="password" path="password2" name="password2" placeholder="Powtórz hasło" />
+                <form:errors path="password2"/>
             </div>
 
             <div class="form-group form-group--buttons">

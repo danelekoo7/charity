@@ -35,7 +35,11 @@ public class RegisterController {
         User userExists = userService.findByUserName(user.getUsername());
         if (userExists != null) {
             result
-                    .rejectValue("username", "istnieje już użytkownik o takiej nazwie");
+                    .rejectValue("username", "error.user.exists");
+        }
+        if (!user.getPassword().equals(user.getPassword2())) {
+            result
+                    .rejectValue("password", "error.password");
         }
         if (result.hasErrors()) {
             return "register";
