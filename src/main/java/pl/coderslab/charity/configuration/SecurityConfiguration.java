@@ -23,7 +23,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.authorizeRequests().antMatchers("/").permitAll();
+        httpSecurity.authorizeRequests()
+                .antMatchers("/registration","/").permitAll()
+                .antMatchers("/donation").hasAnyRole("USER")
+                .and()
+                .formLogin()
+                .loginPage("/login").permitAll().successForwardUrl("/")
+                .and()
+                .logout()
+                .logoutSuccessUrl("/")
+                .invalidateHttpSession(true);
     }
 
 }
