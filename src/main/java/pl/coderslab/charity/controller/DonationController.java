@@ -27,7 +27,7 @@ public class DonationController {
 
 
     @GetMapping
-    public String addDonation(Model model){
+    public String addDonation(Model model) {
         model.addAttribute("donation", new Donation());
         model.addAttribute("categories", categoryRepository.findAll());
         model.addAttribute("institutions", institutionRepository.findAll());
@@ -36,7 +36,7 @@ public class DonationController {
 
 
     @PostMapping
-    public String saveDonation(@ModelAttribute Donation donation){
+    public String saveDonation(@ModelAttribute Donation donation) {
         System.out.println(donation);
         donationRepository.save(donation);
         return "form-confirmation";

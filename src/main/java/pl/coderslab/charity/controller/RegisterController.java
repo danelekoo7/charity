@@ -34,12 +34,10 @@ public class RegisterController {
     public String createNewUser(@Valid User user, BindingResult result) {
         User userExists = userService.findByEmail(user.getEmail());
         if (userExists != null) {
-            result
-                    .rejectValue("email", "error.user.exists");
+            result.rejectValue("email", "error.user.exists");
         }
         if (!user.getPassword().equals(user.getPassword2())) {
-            result
-                    .rejectValue("password", "error.password");
+            result.rejectValue("password", "error.password");
         }
         if (result.hasErrors()) {
             return "register";
