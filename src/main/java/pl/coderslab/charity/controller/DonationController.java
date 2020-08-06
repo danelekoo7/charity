@@ -39,7 +39,6 @@ public class DonationController {
     public String saveDonation(@ModelAttribute Donation donation){
         System.out.println(donation);
         donationRepository.save(donation);
-
         return "form-confirmation";
     }
 }
