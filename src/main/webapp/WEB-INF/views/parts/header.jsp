@@ -1,14 +1,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <link rel="stylesheet" href="<c:url value="../../resources/css/style.css"/>"/>
 </head>
 <body>
-<header class="header--main-page">
+
+    <c:if test="${fn:contains(pageContext.request.requestURI, 'login')}">
+    <header>
+        </c:if>
+            <c:if test="${not fn:contains(pageContext.request.requestURI, 'login')}">
+            <header class="header--main-page">
+                </c:if>
+
     <nav class="container container--70">
         <ul class="nav--actions">
             <li><a href="<c:url value="login" />" class="btn btn--small btn--without-border">Zaloguj</a></li>
-            <li><a href="<c:url value="/registration" />" class="btn btn--small btn--highlighted">Załóż konto</a></li>
+            <li><a href="<c:url value="/registration" />" class="btn btn--small btn--highlighted">Załóż
+                konto</a></li>
         </ul>
 
         <ul>
