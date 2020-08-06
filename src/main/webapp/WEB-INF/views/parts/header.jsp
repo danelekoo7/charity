@@ -5,10 +5,10 @@
 </head>
 <body>
 
-    <c:if test="${fn:contains(pageContext.request.requestURI, 'login')}">
+    <c:if test="${fn:contains(pageContext.request.requestURI, 'login') || fn:contains(pageContext.request.requestURI, 'register') }">
     <header>
         </c:if>
-            <c:if test="${not fn:contains(pageContext.request.requestURI, 'login')}">
+            <c:if test="${not fn:contains(pageContext.request.requestURI, 'login') && not fn:contains(pageContext.request.requestURI, 'register')}">
             <header class="header--main-page">
                 </c:if>
 
@@ -20,7 +20,7 @@
         </ul>
 
         <ul>
-            <li><a href="#" class="btn btn--without-border active">Start</a></li>
+            <li><a href="<c:url value="/" />" class="btn btn--without-border active">Start</a></li>
             <li><a href="#" class="btn btn--without-border">O co chodzi?</a></li>
             <li><a href="#" class="btn btn--without-border">O nas</a></li>
             <li><a href="#" class="btn btn--without-border">Fundacje i organizacje</a></li>
